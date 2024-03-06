@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Update Config Bundle') {
       agent {
-        kubernetes {
+        any {
           yaml libraryResource ('podtemplates/kubectl.yml')
         }
       }
