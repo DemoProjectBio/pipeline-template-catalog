@@ -3,10 +3,7 @@ def hugoPodYaml = libraryResource 'podtemplates/hugo/pod.yml'
 def prNumber
 pipeline {
   agent {
-    kubernetes {
-      label 'hugo-builder'
-      yaml hugoPodYaml
-    }
+    any
   }
   options { 
     buildDiscarder(logRotator(numToKeepStr: '5'))
